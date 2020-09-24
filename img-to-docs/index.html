@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+<title> Img to Docs (Google Docs add-on) </title>
+
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:500,600' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" id="color-change" href="">
+<link rel="stylesheet" id="switch-style" href="/css/grid.css">
+<link rel="alternate" type="application/rss+xml" title="" href="http:/localhost:4000/feed.xml">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-57281757-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-57281757-2');
+</script>
+
+    </head>
+
+    <body>
+        <header class="head">
+            <div class="row">
+	<a href="/">
+		<img src="/img/main_logo.png" id="lg-ic" style="top: 15px; padding-bottom: 0px;" />
+	</a>
+</div>
+<style>
+	/*@media screen and (max-width: 1330px) {
+        #lg-ic {
+            width: calc(20% - 30px);
+        }
+    }*/
+	.row {
+		text-align: center;
+	}
+
+	#lg-ic {
+		width: 300px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+</style>
+
+            <!-- menu, we did go with a static one, you can build a dynamic one, just google a little around -->
+<div class="main-menu">
+    <div class="content">
+        <nav id="menu">
+            <a class="toggle-link noline"><i class="fa fa-close fa-lg"></i></a>
+            <ul>
+                <li>
+                    <a class="homelink" href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/archive">Archive</a>
+                </li>
+                <li>
+                    <a href="#colorswitch" class="modal-trigger">Change Colors <i class="fa fa-cog"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <nav class="iconnav">
+            <ul>
+                <!--li class="sicon">
+                    <a href='#search'><i class='fa fa-search'></i></a>
+                </li-->
+                  
+                <li class="social">
+                    <a href="http://instagram.com/hashim_asad1" class="instagram"><i class="fa fa-instagram"></i></a>
+                </li>
+                   
+                <li class="social">
+                    <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+                </li>
+                  
+            </ul>
+        </nav>
+        <a href='#menu' class="toggle-link noline">
+            <i class="fa fa-navicon"></i>
+        </a>
+    </div>
+</div>
+
+
+
+
+<div id="colorswitch" class="modal color-change">
+    <div class="modal-content">
+      <h4>Change Color Palette</h4>
+      <p>
+      <img id="indigo" alt="color palette preview indigo" src="/media/compressed/indigo.jpg">
+      <img id="brown" alt="color palette preview brown" src="/media/compressed/brown.jpg">
+      <img id="green" alt="color palette preview green" src="/media/compressed/green.jpg">
+      <img id="teal" alt="color palette preview teal" src="/media/compressed/teal.jpg">
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">close</a>
+    </div>
+  </div>
+
+        </header>
+        <div class="margin">
+            <div class="content full">
+                <div class="content-container">
+                    <article>
+                        
+                            
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/G8ZGHyuvSk4?feature=player_detailpage" allowfullscreen></iframe>
+                                </div>
+                            
+                        
+
+                        <h1 class="post-title">
+                            Img to Docs (Google Docs add-on)
+                        </h1>
+                        <div class="meta">
+                            
+
+    <span class="author">Posted by
+        
+        
+            <a href="/author/hashim">
+                
+                    Hashim Asad
+                
+            </a>
+        
+    </span>
+
+ &bull;
+                            <span class="date">
+                                Published on September 16, 2020
+                            </span>
+                        </div>
+                        
+                        <div class="post-content">
+                            <p><img src="/img/img_to_docs-logo.png" height="200px" width="200px" /></p>
+<h5 id="a-custom-add-on-i-wrote-for-image-ocr-in-docs">A custom add-on I wrote for image OCR in docs!</h5>
+<p>This was a project I did during the summer after my senior year of high school. I had been taking some Coursera courses where I found myself taking pictures of presentation slides to use as notes, and I figured that it would be really convenient to have an OCR tool built into my google docs notes for quick note taking. I couldn’t find any add-on like this already available, so I decided to make it myself.
+<br /><br />
+This project was written with HTML, CSS, JS, and Google Apps Script (which is like JS, but with extra tools for interacting with the google doc). The OCR engine being used is Tesseract JS.
+<br /><br />
+I’d like to post this to the G-Suite Marketplace, so that anyone can use it, and I plan to go through the process of getting it verified in order to do that.
+<br /><br /></p>
+<h4 id="code-snippets">Code Snippets:</h4>
+
+<h5 id="js">JS:</h5>
+<h6 id="interfacing-with-tesseract-js">Interfacing with Tesseract JS:</h6>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Creating an object needed to use Tesseract</span>
+<span class="kd">const</span> <span class="nx">worker</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tesseract</span><span class="p">.</span><span class="nx">createWorker</span><span class="p">({</span>
+	<span class="na">logger</span><span class="p">:</span> <span class="nx">m</span> <span class="o">=&gt;</span> <span class="nx">progressUpdate</span><span class="p">(</span><span class="nx">m</span><span class="p">),</span>
+<span class="p">});</span>
+
+<span class="p">(</span><span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// Initialize the worker object</span>
+	<span class="k">await</span> <span class="nx">worker</span><span class="p">.</span><span class="nx">load</span><span class="p">();</span>
+	<span class="k">await</span> <span class="nx">worker</span><span class="p">.</span><span class="nx">loadLanguage</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#langsel</span><span class="dl">"</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
+	<span class="k">await</span> <span class="nx">worker</span><span class="p">.</span><span class="nx">initialize</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#langsel</span><span class="dl">"</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
+	<span class="kd">const</span> <span class="p">{</span>
+		<span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+			<span class="nx">text</span>
+		<span class="p">}</span>
+	<span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">worker</span><span class="p">.</span><span class="nx">recognize</span><span class="p">(</span><span class="nx">file</span><span class="p">);</span>
+    <span class="c1">// Send the output to a function to update it</span>
+	<span class="nx">progressUpdate</span><span class="p">({</span>
+		<span class="na">status</span><span class="p">:</span> <span class="dl">'</span><span class="s1">done</span><span class="dl">'</span><span class="p">,</span>
+		<span class="na">data</span><span class="p">:</span> <span class="nx">text</span>
+	<span class="p">});</span>
+	<span class="k">await</span> <span class="nx">worker</span><span class="p">.</span><span class="nx">terminate</span><span class="p">();</span>
+<span class="p">})();</span>
+</code></pre></div></div>
+<h6 id="animating-icon-to-show-text-recognition-is-done">Animating icon to show text recognition is done:</h6>
+<p>(The CSS icon classes shown below are from my FontAwesome kit)</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Replacing the "in progress" text and icon with "completed" ones</span>
+<span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#drop-icon</span><span class="dl">"</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">fa-spinner fa-pulse</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#drop-icon</span><span class="dl">"</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">fa-check</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#drop-text</span><span class="dl">"</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="dl">"</span><span class="s2">Done!</span><span class="dl">"</span><span class="p">);</span>
+<span class="c1">// Animating a shift from the "completed" status icon and info back to regular "on standby" ones</span>
+<span class="c1">// (to show that it's ready for a new file to be uploaded)</span>
+<span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// phase out "in progress" view</span>
+	<span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#drop-icon</span><span class="dl">"</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span>
+		<span class="na">opacity</span><span class="p">:</span> <span class="mf">0.4</span>
+	<span class="p">},</span> <span class="mi">500</span><span class="p">)</span>
+	<span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#drop-text</span><span class="dl">"</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span>
+		<span class="na">opacity</span><span class="p">:</span> <span class="mf">0.4</span>
+	<span class="p">},</span> <span class="mi">500</span><span class="p">)</span>
+	<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#insert-text</span><span class="dl">'</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="dl">'</span><span class="s1">disabled</span><span class="dl">'</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+    <span class="c1">// phase in the "on standby" view</span>
+	<span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+		<span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#drop-icon</span><span class="dl">"</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">fa-check</span><span class="dl">'</span><span class="p">);</span>
+		<span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#drop-icon</span><span class="dl">"</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="dl">"</span><span class="s2">fa-cloud-upload-alt</span><span class="dl">"</span><span class="p">);</span>
+		<span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#drop-icon</span><span class="dl">"</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span>
+			<span class="na">opacity</span><span class="p">:</span> <span class="mi">1</span>
+		<span class="p">},</span> <span class="mi">500</span><span class="p">);</span>
+		<span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#drop-text</span><span class="dl">"</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="dl">"</span><span class="s2">Drag files or click to upload</span><span class="dl">"</span><span class="p">);</span>
+		<span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#drop-text</span><span class="dl">"</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span>
+			<span class="na">opacity</span><span class="p">:</span> <span class="mi">1</span>
+		<span class="p">},</span> <span class="mi">500</span><span class="p">);</span>
+		<span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#progress</span><span class="dl">"</span><span class="p">).</span><span class="nx">width</span><span class="p">(</span><span class="dl">"</span><span class="s2">0%</span><span class="dl">"</span><span class="p">);</span>
+	<span class="p">},</span> <span class="mi">500</span><span class="p">);</span>
+<span class="p">},</span> <span class="mi">500</span><span class="p">);</span>
+</code></pre></div></div>
+<h5 id="css">CSS:</h5>
+<h6 id="animating-the-file-dropper-transitions">Animating the file dropper transitions:</h6>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.droppable</span> <span class="p">{</span>
+	<span class="nl">background</span><span class="p">:</span> <span class="m">#1dadf5</span><span class="p">;</span> <span class="c">/* blue color during "standby" */</span>
+	<span class="nl">color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
+	<span class="nl">padding</span><span class="p">:</span> <span class="m">25px</span> <span class="m">0</span> <span class="m">8px</span><span class="p">;</span>
+	<span class="nl">margin-left</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+	<span class="nl">margin-right</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+	<span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+	<span class="nl">outline</span><span class="p">:</span> <span class="m">2px</span> <span class="nb">dashed</span> <span class="m">#d8eff1</span><span class="p">;</span> <span class="c">/* dashed outline */</span>
+	<span class="nl">outline-offset</span><span class="p">:</span> <span class="m">-10px</span><span class="p">;</span>
+    <span class="c">/* transition times */</span>
+	<span class="nl">-webkit-transition</span><span class="p">:</span> <span class="n">outline-offset</span> <span class="m">.15s</span> <span class="n">ease-in-out</span><span class="p">,</span> <span class="n">background-color</span> <span class="m">.15s</span> <span class="n">linear</span><span class="p">;</span>
+	<span class="nl">transition</span><span class="p">:</span> <span class="n">outline-offset</span> <span class="m">.15s</span> <span class="n">ease-in-out</span><span class="p">,</span> <span class="n">background-color</span> <span class="m">.15s</span> <span class="n">linear</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c">/* css class for when files are hovering over the dropper */</span>
+<span class="nc">.droppable.dragover</span> <span class="p">{</span>
+    <span class="c">/* indicate to user that the dropper sees their files */</span>
+	<span class="nl">background</span><span class="p">:</span> <span class="m">#44D362</span><span class="p">;</span> <span class="c">/* change color to green */</span>
+	<span class="nl">outline</span><span class="p">:</span> <span class="m">3px</span> <span class="nb">dashed</span> <span class="m">#d8eff1</span><span class="p">;</span> <span class="c">/* make dashes wider */</span>
+	<span class="nl">outline-offset</span><span class="p">:</span> <span class="m">-20px</span><span class="p">;</span> <span class="c">/* shift dashed outline inward */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+                        </div>
+                        
+                        <div class="catsandtags">
+                            
+                            <span class="category">
+                                <span class="name">categories:</span>
+                                personal_projects
+                            </span>
+                            
+                            
+                                &bull;
+                            
+                            
+                            <span class="tags">
+                                <span class="name">tags:</span>
+                                
+                                    <a href="/tag/high school">high school</a>
+                                
+                                    <a href="/tag/12th grade">12th grade</a>
+                                
+                                    <a href="/tag/HTML">HTML</a>
+                                
+                                    <a href="/tag/JS">JS</a>
+                                
+                                    <a href="/tag/CSS">CSS</a>
+                                
+                            </span>
+                            
+                        </div>
+                        
+                    </article>
+                    <div class="post-nav">
+                        
+                        <a class="btn prev" href="/grubhub-scraper/"><i class="fa fa-angle-left"></i><span class="short"> prev</span><span class="long">ious post</span></a>
+                        
+                        
+                        <a class="btn next" href="/weather-chart/"><span class="short">next </span><span class="long">post </span><i class="fa fa-angle-right"></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+    <div class="content">
+        <span>&copy; gridster</span>
+        <span class="backtotop">back to top</span>
+    </div>
+</footer>
+<script src="/js/build/global.min.js"></script>
+
+
+    </body>
+</html>

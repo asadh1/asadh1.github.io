@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+<title> Grubhub Menu Scraper (Selenium Web Scraping) </title>
+
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:500,600' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" id="color-change" href="">
+<link rel="stylesheet" id="switch-style" href="/css/grid.css">
+<link rel="alternate" type="application/rss+xml" title="" href="http:/localhost:4000/feed.xml">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-57281757-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-57281757-2');
+</script>
+
+    </head>
+
+    <body>
+        <header class="head">
+            <div class="row">
+	<a href="/">
+		<img src="/img/main_logo.png" id="lg-ic" style="top: 15px; padding-bottom: 0px;" />
+	</a>
+</div>
+<style>
+	/*@media screen and (max-width: 1330px) {
+        #lg-ic {
+            width: calc(20% - 30px);
+        }
+    }*/
+	.row {
+		text-align: center;
+	}
+
+	#lg-ic {
+		width: 300px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+</style>
+
+            <!-- menu, we did go with a static one, you can build a dynamic one, just google a little around -->
+<div class="main-menu">
+    <div class="content">
+        <nav id="menu">
+            <a class="toggle-link noline"><i class="fa fa-close fa-lg"></i></a>
+            <ul>
+                <li>
+                    <a class="homelink" href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/archive">Archive</a>
+                </li>
+                <li>
+                    <a href="#colorswitch" class="modal-trigger">Change Colors <i class="fa fa-cog"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <nav class="iconnav">
+            <ul>
+                <!--li class="sicon">
+                    <a href='#search'><i class='fa fa-search'></i></a>
+                </li-->
+                  
+                <li class="social">
+                    <a href="http://instagram.com/hashim_asad1" class="instagram"><i class="fa fa-instagram"></i></a>
+                </li>
+                   
+                <li class="social">
+                    <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+                </li>
+                  
+            </ul>
+        </nav>
+        <a href='#menu' class="toggle-link noline">
+            <i class="fa fa-navicon"></i>
+        </a>
+    </div>
+</div>
+
+
+
+
+<div id="colorswitch" class="modal color-change">
+    <div class="modal-content">
+      <h4>Change Color Palette</h4>
+      <p>
+      <img id="indigo" alt="color palette preview indigo" src="/media/compressed/indigo.jpg">
+      <img id="brown" alt="color palette preview brown" src="/media/compressed/brown.jpg">
+      <img id="green" alt="color palette preview green" src="/media/compressed/green.jpg">
+      <img id="teal" alt="color palette preview teal" src="/media/compressed/teal.jpg">
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">close</a>
+    </div>
+  </div>
+
+        </header>
+        <div class="margin">
+            <div class="content full">
+                <div class="content-container">
+                    <article>
+                        
+                            
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/RztCfqDyqos?feature=player_detailpage" allowfullscreen></iframe>
+                                </div>
+                            
+                        
+
+                        <h1 class="post-title">
+                            Grubhub Menu Scraper (Selenium Web Scraping)
+                        </h1>
+                        <div class="meta">
+                            
+
+    <span class="author">Posted by
+        
+        
+            <a href="/author/hashim">
+                
+                    Hashim Asad
+                
+            </a>
+        
+    </span>
+
+ &bull;
+                            <span class="date">
+                                Published on September 15, 2020
+                            </span>
+                        </div>
+                        
+                        <div class="post-content">
+                            <h5 id="a-python-program-that-automates-browser-actions-for-web-scraping">A python program that automates browser actions for web scraping!</h5>
+<p>I wrote this program during an internship in the summer after my junior year of high school. The start-up that I was interning at provided a point-of-sale service for restaurants as their product, and they thought it could be useful to scrape the menu of specific locations of a chain because the menu can very by location.
+<br /><br />
+The program uses Python language bindings for Selenium WebDriver to automate a chrome browser and interact with the webpage. In this way, we can scrape javascript generated content that we can’t get from normal scraping (using <code class="language-plaintext highlighter-rouge">requests.get()</code> ). It also uses <code class="language-plaintext highlighter-rouge">BeautifulSoup</code> to parse HTML received from the browser.
+<br /><br />
+Note: The program normally runs in headless mode. This was disabled in the video above for demonstration purposes.
+<br /><br /></p>
+<h5 id="python-code-snippets-full-code-available-here">Python Code Snippets (full code available <a href="https://github.com/asadh1/Grubhub-Menu-Scraper">here</a>)</h5>
+<h6 id="getting-options-of-an-item-in-the-menu">Getting options of an item in the menu:</h6>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_item</span><span class="p">(</span><span class="n">browser</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span> <span class="c1"># id is the html id
+</span>    <span class="s">""" given an id, scrape a menu item and all of its options """</span>
+    <span class="n">button</span> <span class="o">=</span> <span class="n">browser</span><span class="p">.</span><span class="n">find_element_by_id</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+    <span class="c1"># click on the item to open options chooser:
+</span>    <span class="n">browser</span><span class="p">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s">"arguments[0].click();"</span><span class="p">,</span> <span class="n">button</span><span class="p">)</span>
+    <span class="n">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">innerHTML</span> <span class="o">=</span> <span class="n">browser</span><span class="p">.</span><span class="n">page_source</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">innerHTML</span><span class="p">,</span> <span class="s">'html.parser'</span><span class="p">)</span> <span class="c1"># feed html to parser
+</span>
+    <span class="n">_options</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="c1"># divide into option sections
+</span>    <span class="n">options</span> <span class="o">=</span> <span class="n">html</span><span class="p">.</span><span class="n">find_all</span><span class="p">(</span><span class="s">'div'</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s">'menuItemModal-options'</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">option</span> <span class="ow">in</span> <span class="n">options</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">option</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">class_</span><span class="o">=</span><span class="s">'menuItemModal-choice-name'</span><span class="p">).</span><span class="n">text</span>
+        <span class="n">choices</span> <span class="o">=</span> <span class="n">option</span><span class="p">.</span><span class="n">find_all</span><span class="p">(</span><span class="s">'span'</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s">'menuItemModal-choice-option-description'</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s">' + '</span> <span class="ow">in</span> <span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">text</span><span class="p">:</span>
+            <span class="c1"># divide into option, price pairs
+</span>            <span class="n">_choices</span> <span class="o">=</span> <span class="p">{</span><span class="n">choice</span><span class="p">.</span><span class="n">text</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">' + '</span><span class="p">)[</span><span class="mi">0</span><span class="p">]:</span><span class="n">choice</span><span class="p">.</span><span class="n">text</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">' + '</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">choice</span> <span class="ow">in</span> <span class="n">choices</span><span class="p">}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_choices</span> <span class="o">=</span> <span class="p">[</span><span class="n">choice</span><span class="p">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">choice</span> <span class="ow">in</span> <span class="n">choices</span><span class="p">]</span>
+        <span class="n">_options</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">_choices</span>
+    <span class="k">return</span> <span class="n">_options</span>
+</code></pre></div></div>
+<h6 id="getting-page-html-with-selenium">Getting page HTML with selenium:</h6>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">chrome_options</span> <span class="o">=</span> <span class="n">Options</span><span class="p">()</span>
+<span class="n">chrome_options</span><span class="p">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">"--headless"</span><span class="p">)</span> <span class="c1"># run in headless mode
+</span>
+<span class="n">browser</span> <span class="o">=</span> <span class="n">webdriver</span><span class="p">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="n">chrome_options</span><span class="p">)</span>
+<span class="n">browser</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># give page time to load everything
+</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="n">browser</span><span class="p">.</span><span class="n">page_source</span>
+</code></pre></div></div>
+<h6 id="compiling-menu-and-writing-to-json-file">Compiling menu and writing to JSON file:</h6>
+<p>(cat_titles, cat_items, price were defined earlier in the program)</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">full_menu</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">ind</span><span class="p">,</span> <span class="n">title</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cat_titles</span><span class="p">):</span> <span class="c1"># category titles
+</span>    <span class="n">all_items</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1"># iterate through all items in a category
+</span>    <span class="k">for</span> <span class="n">ind2</span><span class="p">,</span> <span class="n">itm_name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cat_items</span><span class="p">[</span><span class="n">ind</span><span class="p">]):</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">item</span><span class="p">[</span><span class="s">'name'</span><span class="p">]</span> <span class="o">=</span> <span class="n">itm_name</span>
+        <span class="n">item</span><span class="p">[</span><span class="s">'price'</span><span class="p">]</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="n">ind</span><span class="p">][</span><span class="n">ind2</span><span class="p">]</span>
+        <span class="n">item</span><span class="p">[</span><span class="s">'options'</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_item</span><span class="p">(</span><span class="n">browser</span><span class="p">,</span> <span class="n">ids</span><span class="p">[</span><span class="n">ind</span><span class="p">][</span><span class="n">ind2</span><span class="p">])</span>
+        <span class="n">all_items</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="n">full_menu</span><span class="p">[</span><span class="n">title</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_items</span>
+<span class="c1"># getting path of directory to find JSON file path
+</span><span class="n">path</span> <span class="o">=</span> <span class="s">'/'</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">realpath</span><span class="p">(</span><span class="n">__file__</span><span class="p">).</span><span class="n">split</span><span class="p">(</span><span class="s">'/'</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">f'</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s">/data.json'</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">json</span><span class="p">.</span><span class="n">dump</span><span class="p">(</span><span class="n">full_menu</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># writing to file with pretty printing
+</span><span class="k">print</span><span class="p">(</span><span class="s">'[Finished]'</span><span class="p">)</span>
+</code></pre></div></div>
+
+                        </div>
+                        
+                        <div class="catsandtags">
+                            
+                            <span class="category">
+                                <span class="name">categories:</span>
+                                personal_projects
+                            </span>
+                            
+                            
+                                &bull;
+                            
+                            
+                            <span class="tags">
+                                <span class="name">tags:</span>
+                                
+                                    <a href="/tag/high school">high school</a>
+                                
+                                    <a href="/tag/11th grade">11th grade</a>
+                                
+                                    <a href="/tag/Python">Python</a>
+                                
+                                    <a href="/tag/Selenium">Selenium</a>
+                                
+                                    <a href="/tag/HTML">HTML</a>
+                                
+                            </span>
+                            
+                        </div>
+                        
+                    </article>
+                    <div class="post-nav">
+                        
+                        <a class="btn prev" href="/frc-scouter/"><i class="fa fa-angle-left"></i><span class="short"> prev</span><span class="long">ious post</span></a>
+                        
+                        
+                        <a class="btn next" href="/img-to-docs/"><span class="short">next </span><span class="long">post </span><i class="fa fa-angle-right"></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+    <div class="content">
+        <span>&copy; gridster</span>
+        <span class="backtotop">back to top</span>
+    </div>
+</footer>
+<script src="/js/build/global.min.js"></script>
+
+
+    </body>
+</html>

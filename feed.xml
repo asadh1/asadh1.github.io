@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title></title>
+		<description>Hi! I'm Hashim, and this is my CS portfolio</description>
+		<link>http://localhost:4000</link>
+		<atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>Plotting Useful Data (Weather Chart)</title>
+				
+				
+					<description>&lt;h5 id=&quot;using-pandas-to-extract-useful-data-and-matplotlib-to-create-a-chart&quot;&gt;Using Pandas to extract useful data and Matplotlib to create a chart.&lt;/h5&gt;
+&lt;p&gt;This was one of the projects I needed to complete to earn my certificate in the Coursera course &lt;strong&gt;Applied Plotting, Charting &amp;amp; Data Representation in Python&lt;/strong&gt; by the University of Michigan.
+&lt;br /&gt;&lt;br /&gt;
+I won’t be sharing the exact code in order to abide by Coursera’s honor code, however, I will describe the problem:&lt;br /&gt;
+Given a CSV of weather data ranging from 2005 to 2015, I wanted to plot the record high and low temperatures (in degrees celsius) of each day of the year over the period from 2005 to 2014 and then plot the points of 2015, where records were broken.
+&lt;br /&gt;&lt;br /&gt;
+I approached the problem by first splitting off data from the year 2015 into a different Pandas DataFrame. Then I reformatted the date values to exclude year and used  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;groupby()&lt;/code&gt;  to find the minimum and maximum values for each day. Next, I looped through each day and compared the 2015 highs and lows to the records from 2005-2014 and appending the day and value to arrays if the 2015 values broke the records.&lt;br /&gt;
+Finally, I plotted each of the records from 2005-2014 and scattered the points from 2015 that broke records.&lt;/p&gt;
+</description>
+				
+				<pubDate>Thu, 17 Sep 2020 00:00:00 -0400</pubDate>
+				<link>http://localhost:4000/weather-chart/</link>
+				<guid isPermaLink="true">http://localhost:4000/weather-chart/</guid>
+			</item>
+		
+			<item>
+				<title>Img to Docs (Google Docs add-on)</title>
+				
+				
+					<description>&lt;p&gt;&lt;img src=&quot;/img/img_to_docs-logo.png&quot; height=&quot;200px&quot; width=&quot;200px&quot; /&gt;&lt;/p&gt;
+&lt;h5 id=&quot;a-custom-add-on-i-wrote-for-image-ocr-in-docs&quot;&gt;A custom add-on I wrote for image OCR in docs!&lt;/h5&gt;
+&lt;p&gt;This was a project I did during the summer after my senior year of high school. I had been taking some Coursera courses where I found myself taking pictures of presentation slides to use as notes, and I figured that it would be really convenient to have an OCR tool built into my google docs notes for quick note taking. I couldn’t find any add-on like this already available, so I decided to make it myself.
+&lt;br /&gt;&lt;br /&gt;
+This project was written with HTML, CSS, JS, and Google Apps Script (which is like JS, but with extra tools for interacting with the google doc). The OCR engine being used is Tesseract JS.
+&lt;br /&gt;&lt;br /&gt;
+I’d like to post this to the G-Suite Marketplace, so that anyone can use it, and I plan to go through the process of getting it verified in order to do that.
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h4 id=&quot;code-snippets&quot;&gt;Code Snippets:&lt;/h4&gt;
+
+</description>
+				
+				<pubDate>Wed, 16 Sep 2020 00:00:00 -0400</pubDate>
+				<link>http://localhost:4000/img-to-docs/</link>
+				<guid isPermaLink="true">http://localhost:4000/img-to-docs/</guid>
+			</item>
+		
+			<item>
+				<title>Grubhub Menu Scraper (Selenium Web Scraping)</title>
+				
+				
+					<description>&lt;h5 id=&quot;a-python-program-that-automates-browser-actions-for-web-scraping&quot;&gt;A python program that automates browser actions for web scraping!&lt;/h5&gt;
+&lt;p&gt;I wrote this program during an internship in the summer after my junior year of high school. The start-up that I was interning at provided a point-of-sale service for restaurants as their product, and they thought it could be useful to scrape the menu of specific locations of a chain because the menu can very by location.
+&lt;br /&gt;&lt;br /&gt;
+The program uses Python language bindings for Selenium WebDriver to automate a chrome browser and interact with the webpage. In this way, we can scrape javascript generated content that we can’t get from normal scraping (using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;requests.get()&lt;/code&gt; ). It also uses &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BeautifulSoup&lt;/code&gt; to parse HTML received from the browser.
+&lt;br /&gt;&lt;br /&gt;
+Note: The program normally runs in headless mode. This was disabled in the video above for demonstration purposes.
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h5 id=&quot;python-code-snippets-full-code-available-here&quot;&gt;Python Code Snippets (full code available &lt;a href=&quot;https://github.com/asadh1/Grubhub-Menu-Scraper&quot;&gt;here&lt;/a&gt;)&lt;/h5&gt;
+&lt;h6 id=&quot;getting-options-of-an-item-in-the-menu&quot;&gt;Getting options of an item in the menu:&lt;/h6&gt;
+&lt;p&gt;``` python
+def get_item(browser, id): # id is the html id
+    “”” given an id, scrape a menu item and all of its options “””
+    button = browser.find_element_by_id(id)
+    # click on the item to open options chooser:
+    browser.execute_script(“arguments[0].click();”, button)
+    time.sleep(1)&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Tue, 15 Sep 2020 00:00:00 -0400</pubDate>
+				<link>http://localhost:4000/grubhub-scraper/</link>
+				<guid isPermaLink="true">http://localhost:4000/grubhub-scraper/</guid>
+			</item>
+		
+			<item>
+				<title>FRC Scouting Website (Custom Google Form)</title>
+				
+				
+					<description>&lt;h5 id=&quot;a-website-that-acts-like-a-google-form-for-completely-customizable-user-input&quot;&gt;A website that acts like a Google Form for completely customizable user input!&lt;/h5&gt;
+&lt;p&gt;This was a project I did during the FRC (First Robotics Composition) season of my junior year of high school (2019 season - FRC Destination: Deep Space).
+&lt;br /&gt;&lt;br /&gt;
+In FRC, it was important to my team that on competition days, we scout other teams–that is to assign some of our team members to watch a specific robotics team in a match and log all the point scoring actions they make. This data is later used to help choose teams that would work well with our own later on in the competition.
+&lt;br /&gt;&lt;br /&gt;
+Normally, we would make a Google Form to log this information with drop-down menus and multiple choice questions, but &lt;strong&gt;I thought I could make the interface more interactive&lt;/strong&gt; and fun, so I did! I wrote code for the webpage during free time in class and during robotics meetings. &lt;strong&gt;On my webpage, rather than choosing from drop-down menus, users interact with representations of the field elements in the game. My code then tallies up this information and appends it to a Google Sheet just like a Google Form would.&lt;/strong&gt;
+&lt;br /&gt;&lt;br /&gt;
+I was able to get the webpage to an acceptable level, and my team ended up using it instead of a Google Form. It was met with really positive reviews, with people saying it was easy to use and some saying that they loved it–It was liked well enough that mentors wanted to make our own scouting webpage again the next year and assigned it as a task for our programming sub-team.
+&lt;br /&gt;&lt;br /&gt;
+This project uses HTML and CSS to create representations of the game’s field elements for the form. Javascript is used to handle the game logic of the webpage (to keep everything in line with the rules of the game), read the input, and pass on the data to the backend. Python (with the Flask framework) is used on the backend to post the data to a Google Sheets using a the Google Sheets API to manipulate a service account (a kind of dummy account manipulated by code to edit and write to Google Files).
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h4 id=&quot;code-snippets&quot;&gt;Code Snippets:&lt;/h4&gt;
+
+</description>
+				
+				<pubDate>Mon, 14 Sep 2020 00:00:00 -0400</pubDate>
+				<link>http://localhost:4000/frc-scouter/</link>
+				<guid isPermaLink="true">http://localhost:4000/frc-scouter/</guid>
+			</item>
+		
+			<item>
+				<title>Virtual Controller</title>
+				
+				
+					<description>&lt;h5 id=&quot;a-virtual-controller-to-use-a-smartphone-for-any-computer-game&quot;&gt;A virtual controller to use a smartphone for any computer game!&lt;/h5&gt;
+&lt;p&gt;This was a project I did during my junior and part of my senior year of high school. I got the idea from a website I found called airconsole.com, which has some multiplayer games that you control using your phone. I figured that I could make my own version of that using emulated keyboard keys and gamepad input, so that it could be used for any game I wanted.&lt;br /&gt;
+The goal of the project was to make a convenient way to play games with separate game controllers, meaning without having to bring a physical controller with you everywhere, you can simply use your phone and play multiplayer games (no phone apps needed!).
+&lt;br /&gt;&lt;br /&gt;
+This project was written with Python using its Flask framework, HTML and CSS for the UI webpage (mostly through flask macros), and JS to keep track of the UI and make requests to Flask.
+&lt;br /&gt;&lt;br /&gt;
+The gamepad emulation uses &lt;a href=&quot;https://github.com/unbit/foohid&quot;&gt;this project&lt;/a&gt; to emulate usb HID devices on mac (on windows I would use &lt;a href=&quot;http://vjoystick.sourceforge.net/site/index.php/download-a-install/download&quot;&gt;vjoy&lt;/a&gt;).&lt;br /&gt;
+The keyboard events are generated with the &lt;a href=&quot;https://pypi.org/project/pyobjc-framework-Quartz/&quot;&gt;quartz&lt;/a&gt; framework for mac.&lt;br /&gt;
+The touch screen joystick on the webpage UI uses this JS project &lt;a href=&quot;https://github.com/jeromeetienne/virtualjoystick.js&quot;&gt;virtualjoystick.js&lt;/a&gt;.
+&lt;br /&gt;&lt;br /&gt;
+Note: not shown in the video, is a feature later added to generates a qr code, so that you users can quickly scan that rather than manually type in the ip address.&lt;br /&gt;
+&lt;img src=&quot;/img/qrcode.png&quot; height=&quot;400px&quot; width=&quot;400px&quot; /&gt;&lt;br /&gt;
+Also, the gamepad emulation also supports multiple players.
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h4 id=&quot;code-snippets&quot;&gt;Code Snippets:&lt;/h4&gt;
+
+</description>
+				
+				<pubDate>Sun, 13 Sep 2020 00:00:00 -0400</pubDate>
+				<link>http://localhost:4000/virtual-controller/</link>
+				<guid isPermaLink="true">http://localhost:4000/virtual-controller/</guid>
+			</item>
+		
+	</channel>
+</rss>
