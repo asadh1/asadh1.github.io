@@ -102,7 +102,7 @@ This project uses HTML and CSS to create representations of the game’s field e
 				<title>Virtual Controller</title>
 				
 				
-					<description>&lt;h5 id=&quot;a-virtual-controller-to-use-a-smartphone-for-any-computer-game&quot;&gt;A virtual controller to use a smartphone for any computer game!&lt;/h5&gt;
+					<description>&lt;h5 id=&quot;use-a-smartphone-as-a-virtual-game-controller-for-any-computer-game&quot;&gt;Use a smartphone as a virtual game controller for any computer game!&lt;/h5&gt;
 &lt;p&gt;This was a project I did during my junior and part of my senior year of high school. I got the idea from a website I found called airconsole.com, which has some multiplayer games that you control using your phone. I figured that I could make my own version of that using emulated keyboard keys and gamepad input, so that it could be used for any game I wanted.&lt;br /&gt;
 The goal of the project was to make a convenient way to play games with separate game controllers, meaning without having to bring a physical controller with you everywhere, you can simply use your phone and play multiplayer games (no phone apps needed!).
 &lt;br /&gt;&lt;br /&gt;
