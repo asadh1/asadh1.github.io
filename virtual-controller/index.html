@@ -166,18 +166,12 @@ Meaning that if button 1 was pressed, the value would be 1; if 2 was pressed, th
     <span class="s">""" buttons is a sorted array of button values, representing
     the buttons that are in the pressed state """</span>
     <span class="n">but_sum</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># this int represents the button states (the short value)
-</span>    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">buttons</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">buttons</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">num</span> <span class="o">=</span> <span class="n">buttons</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">num</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">buttons</span><span class="p">)</span>
-        <span class="c1"># ncr(n, r) is a function defined earlier in program for combinations
-</span>        <span class="c1"># get the number of combinations of the highest number
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">buttons</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="n">buttons</span><span class="p">[</span><span class="o">-</span><span class="n">i</span><span class="p">]</span> <span class="c1"># go through the buttons in descending order of button numbers
+</span>        <span class="c1"># ncr(n, r) is a function defined earlier in program for combinations
+</span>        <span class="c1"># get the number of combinations for the next highest number
 </span>        <span class="n">base</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">ncr</span><span class="p">(</span><span class="n">num</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">num</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
         <span class="n">but_sum</span> <span class="o">+=</span> <span class="n">base</span>
-        <span class="c1"># move to the next highest button
-</span>        <span class="n">buttons</span> <span class="o">=</span> <span class="n">buttons</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-
     <span class="k">return</span> <span class="n">but_sum</span>
 </code></pre></div></div>
 <h6 id="generating-qr-codes-and-running-flask-app">Generating qr codes and running flask app:</h6>
