@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-<title> Plotting Useful Data (Weather Chart) </title>
+<title> Image Processing (Seam Carving) </title>
 
 <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
 <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:500,600' rel='stylesheet' type='text/css'>
@@ -114,12 +114,12 @@
                     <article>
                         
                             
-                                <img class="featimg" src="/media/compressed/weather_chart.png" alt="weather_chart.png">
+                                <img class="featimg" src="/media/compressed/p2.png" alt="p2.png">
                             
                         
 
                         <h1 class="post-title">
-                            Plotting Useful Data (Weather Chart)
+                            Image Processing (Seam Carving)
                         </h1>
                         <div class="meta">
                             
@@ -137,19 +137,19 @@
 
  &bull;
                             <span class="date">
-                                Published on September 17, 2020
+                                Published on October 11, 2020
                             </span>
                         </div>
                         
                         <div class="post-content">
-                            <h5 id="using-pandas-to-extract-useful-data-and-matplotlib-to-create-a-chart">Using Pandas to extract useful data and Matplotlib to create a chart.</h5>
-<p>This was one of the projects I needed to complete to earn my certificate in the Coursera course <strong>Applied Plotting, Charting &amp; Data Representation in Python</strong> by the University of Michigan.
+                            <p><img src="/img/image_processing.png" width="100%" /></p>
+<h5 id="implementing-the-seam-carving-algorithm-in-c">Implementing the Seam Carving Algorithm in C++.</h5>
+<p>This was a projects I completed for my class <strong>EECS 280. Programming and Introductory Data Structures</strong> at University of Michigan.
 <br /><br />
-I won’t be sharing the exact code in order to abide by Coursera’s honor code, however, I will describe the problem:<br />
-Given a CSV of weather data ranging from 2005 to 2015, I wanted to plot the record high and low temperatures (in degrees celsius) of each day of the year over the period from 2005 to 2014 and then plot the points of 2015, where records were broken.
+I won’t be sharing my implementation/code in order to abide by UofM’s honor code, however, the point of the project was to use structs, arrays, pointer, etc in C++ to implement the Seam Carving Algorithm for content-aware image resizing. This is different from normal cropping because the algortihm identifies and removes the “seams” (paths of pixels in the image) that are least important; you can see this in the examples above.
 <br /><br />
-I approached the problem by first splitting off data from the year 2015 into a different Pandas DataFrame. Then I reformatted the date values to exclude year and used  <code class="language-plaintext highlighter-rouge">groupby()</code>  to find the minimum and maximum values for each day. Next, I looped through each day and compared the 2015 highs and lows to the records from 2005-2014 and appending the day and value to arrays if the 2015 values broke the records.<br />
-Finally, I plotted each of the records from 2005-2014 and scattered the points from 2015 that broke records.</p>
+To learn more about the algorithm, you can watch the video below:</p>
+<iframe height="500px" src="https://www.youtube.com/embed/6NcIJXTlugc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
                         </div>
                         
@@ -167,15 +167,13 @@ Finally, I plotted each of the records from 2005-2014 and scattered the points f
                             <span class="tags">
                                 <span class="name">tags:</span>
                                 
-                                    <a href="/tag/high school">high school</a>
+                                    <a href="/tag/college">college</a>
                                 
-                                    <a href="/tag/12th grade">12th grade</a>
+                                    <a href="/tag/first year">first year</a>
                                 
-                                    <a href="/tag/Python">Python</a>
+                                    <a href="/tag/EECS 280">EECS 280</a>
                                 
-                                    <a href="/tag/Data Science">Data Science</a>
-                                
-                                    <a href="/tag/Matplotlib">Matplotlib</a>
+                                    <a href="/tag/C++">C++</a>
                                 
                             </span>
                             
@@ -184,10 +182,8 @@ Finally, I plotted each of the records from 2005-2014 and scattered the points f
                     </article>
                     <div class="post-nav">
                         
-                        <a class="btn prev" href="/img-to-docs/"><i class="fa fa-angle-left"></i><span class="short"> prev</span><span class="long">ious post</span></a>
+                        <a class="btn prev" href="/weather-chart/"><i class="fa fa-angle-left"></i><span class="short"> prev</span><span class="long">ious post</span></a>
                         
-                        
-                        <a class="btn next" href="/image-processing/"><span class="short">next </span><span class="long">post </span><i class="fa fa-angle-right"></i></a>
                         
                     </div>
                 </div>

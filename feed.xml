@@ -7,6 +7,25 @@
 		<atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Image Processing (Seam Carving)</title>
+				
+				
+					<description>&lt;p&gt;&lt;img src=&quot;/img/image_processing.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+&lt;h5 id=&quot;implementing-the-seam-carving-algorithm-in-c&quot;&gt;Implementing the Seam Carving Algorithm in C++.&lt;/h5&gt;
+&lt;p&gt;This was a projects I completed for my class &lt;strong&gt;EECS 280. Programming and Introductory Data Structures&lt;/strong&gt; at University of Michigan.
+&lt;br /&gt;&lt;br /&gt;
+I won’t be sharing my implementation/code in order to abide by UofM’s honor code, however, the point of the project was to use structs, arrays, pointer, etc in C++ to implement the Seam Carving Algorithm for content-aware image resizing. This is different from normal cropping because the algortihm identifies and removes the “seams” (paths of pixels in the image) that are least important; you can see this in the examples above.
+&lt;br /&gt;&lt;br /&gt;
+To learn more about the algorithm, you can watch the video below:&lt;/p&gt;
+&lt;iframe height=&quot;500px&quot; src=&quot;https://www.youtube.com/embed/6NcIJXTlugc&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+				
+				<pubDate>Sun, 11 Oct 2020 00:00:00 -0400</pubDate>
+				<link>http://localhost:4000/image-processing/</link>
+				<guid isPermaLink="true">http://localhost:4000/image-processing/</guid>
+			</item>
+		
+			<item>
 				<title>Plotting Useful Data (Weather Chart)</title>
 				
 				
