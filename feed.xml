@@ -16,7 +16,9 @@
 &lt;br /&gt;&lt;br /&gt;
 I won’t be sharing my implementation/code in order to abide by UofM’s honor code, however, the point of the project was to use structs, arrays, pointer, etc in C++ to implement the Seam Carving Algorithm for content-aware image resizing. This is different from normal cropping because the algortihm identifies and removes the “seams” (paths of pixels in the image) that are least important; you can see this in the examples above.
 &lt;br /&gt;&lt;br /&gt;
-To learn more about the algorithm, you can watch the video below:&lt;/p&gt;
+You can find the full project spec &lt;a href=&quot;https://eecs280staff.github.io/p2-cv/&quot;&gt;here&lt;/a&gt;.
+&lt;br /&gt;&lt;/p&gt;
+&lt;h5 id=&quot;to-learn-more-about-the-algorithm-you-can-watch-the-video-below&quot;&gt;To learn more about the algorithm, you can watch the video below:&lt;/h5&gt;
 &lt;iframe height=&quot;500px&quot; src=&quot;https://www.youtube.com/embed/6NcIJXTlugc&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
 				
