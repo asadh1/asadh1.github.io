@@ -2611,7 +2611,23 @@ td, th {
 	border-radius: 2px;
 }
 
+.about-me {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (min-width: 701px) {
+    .about-me {
+        display: block;
+    }
+}
+
 @media screen and (max-width: 700px) {
+    .about-me {
+        display: none;
+    }
+
 	table {
 		width: 100%;
 		border-collapse: collapse;

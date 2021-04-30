@@ -78,6 +78,9 @@
                     <a href="/img-to-docs/">Img to Docs</a>
                 </li>
                 <li>
+                    <a href="/contact-me/">Contact Me</a>
+                </li>
+                <li>
                     <a href="#colorswitch" class="modal-trigger">Change Colors <i class="fa fa-cog"></i></a>
                 </li>
             </ul>
@@ -87,11 +90,15 @@
                 <!--li class="sicon">
                     <a href='#search'><i class='fa fa-search'></i></a>
                 </li-->
-                  
+                
                 <li class="social">
-                    <a href="http://instagram.com/hashim_asad1" class="instagram"><i class="fa fa-instagram"></i></a>
+                    <a href="https://github.com/asadh1" class="github"><i class="fa fa-github"></i></a>
                 </li>
-                   
+                 
+                <li class="social">
+                    <a href="https://www.linkedin.com/in/hashimasad/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                </li>
+                      
                 <li class="social">
                     <a href="https://www.youtube.com/playlist?list=PLgvfm-Kg-cV827JN-l-JIYhZKrli57mTl" class="youtube"><i class="fa fa-youtube"></i></a>
                 </li>
@@ -133,7 +140,18 @@
                             My Resume
                         </h1>
                         <div class="post-content">
-                            <iframe src="https://drive.google.com/file/d/1VhTWtu7M_1_0SK1dQnzp5hI70-efQB7i/preview" height="750px"></iframe>
+                            <div style="text-align: center; padding-top: 30px;">
+<a href="https://docs.google.com/document/d/1ty4r31pcFNP_RjWgUn4U4C4ElG2orA91jrSNhe6CkY4/export?format=pdf" style="padding-bottom: 15px; display: block; font-weight: bold;" download="">Download Here</a>
+<iframe id="cv_pdf" onload="sizePDF();" src="https://docs.google.com/document/d/1ty4r31pcFNP_RjWgUn4U4C4ElG2orA91jrSNhe6CkY4/preview?format=pdf" style="max-width: 8.5in; min-height: 200px;"></iframe>
+</div>
+<script>
+function sizePDF() {
+    var pdf = document.getElementById("cv_pdf");
+    pdf.style.height = `${Math.ceil( pdf.offsetWidth * (11/8.5) )}px`;
+}
+window.addEventListener('resize', sizePDF);
+</script>
+
 
                         </div>
                     </article>

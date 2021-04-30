@@ -97,10 +97,10 @@ def get_item(browser, id): # id is the html id
 			</item>
 		
 			<item>
-				<title>FRC Scouting Website (Custom Google Form)</title>
+				<title>FRC Scouting Website (Custom Data Collection Website)</title>
 				
 				
-					<description>&lt;h5 id=&quot;a-website-that-acts-like-a-google-form-for-completely-customizable-user-input&quot;&gt;A website that acts like a Google Form for completely customizable user input!&lt;/h5&gt;
+					<description>&lt;h5 id=&quot;a-website-that-records-completely-customizable-user-input&quot;&gt;A website that records completely customizable user input!&lt;/h5&gt;
 &lt;p&gt;This was a project I did during the FRC (First Robotics Composition) season of my junior year of high school (2019 season - FRC Destination: Deep Space).
 &lt;br /&gt;&lt;br /&gt;
 In FRC, it was important to my team that on competition days, we scout other teams–that is to assign some of our team members to watch a specific robotics team in a match and log all the point scoring actions they make. This data is later used to help choose teams that would work well with our own later on in the competition.
@@ -121,7 +121,7 @@ This project uses HTML and CSS to create representations of the game’s field e
 			</item>
 		
 			<item>
-				<title>Virtual Controller</title>
+				<title>Virtual Game Controller (Web-Based Gamepad) for Mac</title>
 				
 				
 					<description>&lt;h5 id=&quot;use-a-smartphone-as-a-virtual-game-controller-for-any-computer-game&quot;&gt;Use a smartphone as a virtual game controller for any computer game!&lt;/h5&gt;
