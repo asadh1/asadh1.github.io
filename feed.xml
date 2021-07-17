@@ -12,7 +12,7 @@
 				
 					<description>&lt;p&gt;&lt;img src=&quot;/img/image_processing.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
 &lt;h5 id=&quot;implementing-the-seam-carving-algorithm-in-c&quot;&gt;Implementing the Seam Carving Algorithm in C++.&lt;/h5&gt;
-&lt;p&gt;This was a projects I completed for my class &lt;strong&gt;EECS 280. Programming and Introductory Data Structures&lt;/strong&gt; at University of Michigan.
+&lt;p&gt;This was a project I completed for my class (&lt;strong&gt;EECS 280. Programming and Introductory Data Structures&lt;/strong&gt;) at the University of Michigan.
 &lt;br /&gt;&lt;br /&gt;
 I won’t be sharing my implementation/code in order to abide by UofM’s honor code, however, the point of the project was to use structs, arrays, pointer, etc in C++ to implement the Seam Carving Algorithm for content-aware image resizing. This is different from normal cropping because the algortihm identifies and removes the “seams” (paths of pixels in the image) that are least important; you can see this in the examples above.
 &lt;br /&gt;&lt;br /&gt;
