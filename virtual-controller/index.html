@@ -188,7 +188,7 @@ Also, the gamepad emulation also supports multiple players.
 <h5 id="python">Python:</h5>
 <h6 id="translating-an-array-of-button-values-to-a-single-number">Translating an array of button values to a single number:</h6>
 <p>The HID emulation requires a struct of values (x, y, z, rx axes and a button value), where the 16 button states  of the gamepad are represented as a single short (C type).<br />
-Meaning that if button 1 was pressed, the value would be 1; if 2 was pressed, the value is 2; if 1 and 2 are pressed, the value is 3; and if button 3 is pressed, the value is 4, etc.
+Meaning that if button 1 was pressed, the value would be 1; if 2 was pressed, the value is 2; if 1 and 2 are pressed, the value is 3; and if button 3 is pressed, the value is 4, etc. I hadn’t learned about bit strings and how numbers were represented at the time, so I created my own solution.
 <strong>Fresh out of my precalculus class, I thought I could handle this by using mathematical combinations:</strong></p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">button_translate</span><span class="p">(</span><span class="n">buttons</span><span class="p">):</span>
     <span class="s">""" buttons is a sorted array of button values, representing
